@@ -1,0 +1,11 @@
+#hero{
+    height: 60vh;
+    width: 100%;
+}
+.hero__background{
+    background-image: url(../img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40%;
+    width: 40%;
+}

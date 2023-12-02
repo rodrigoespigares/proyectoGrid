@@ -1,0 +1,30 @@
+*{
+    /*Establezco el tamaño a 10px con el porcentaje*/
+    font-size: 62.5%;
+    /*Elimino la decoracion de las listas*/
+    list-style: none;
+    /* Establezco padding y margin a 0*/
+    padding: 0;
+    margin: 0;
+    /* Uso la fuente*/
+    font-family: 'Nunito', sans-serif;
+    /* Establezco el box sizing como border box*/
+    box-sizing: border-box;
+}
+/* Declaracion de variables*/
+:root{
+    /* Color proncipal */
+    --primary: #696969;
+    --primaryCeroCuatro: rgba(105, 105, 105,0.6);
+    /* Letra para enlaces */
+    --letter: #000;
+    /* Para los hover */
+    --letter-hover : #fff;
+    /* Color secundario */
+    --secondary: #FFAB40;
+}
+/* Declaro el body y sus caracteristicas*/
+body{
+    display: grid;
+    
+}
