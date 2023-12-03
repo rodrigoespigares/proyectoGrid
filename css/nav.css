@@ -1,26 +1,28 @@
 /* Estilo para la barra de navegación en la parte superior */
 .top-nav {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: left;
+  grid-column: nav-start/nav-end;
   color: var(--primary);
-  padding: 0 6em;
 }
 
 /* Estilo para el menú de navegación */
 .menu {
+  position: absolute;
   display: flex;
-  flex-direction: row;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  max-height: 60vh;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
   font-size: 3rem;
+  z-index: -1;
 }
 
 .menu > li {
-  margin: 0 1rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -28,9 +30,7 @@
 .menu-button-container {
   display: flex;
   height: 100%;
-  width: 30px;
   cursor: pointer;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -43,13 +43,13 @@
 .menu-button,
 .menu-button::before,
 .menu-button::after {
-  display: block;
   background-color: var(--primary);
   position: absolute;
   height: 4px;
   width: 30px;
   transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
   border-radius: 2px;
+  z-index: 4;
 }
 
 .menu-button::before {
@@ -77,48 +77,26 @@
   transform: rotate(-405deg);
 }
 
-  /* Estilo del menú en pantallas más más pequeñas */
-  .menu {
-    position: absolute;
-    top: 0;
-    margin-top: 20vh;
-    left: 0;
-    flex-direction: column;
-    width: 100%;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-  }
-  #menu-toggle:checked ~ .menu{
-    background-color: var(--primaryCeroCuatro);
-  }
-  /* Transiciones para el despliegue del menú en pantallas más pequeñas */
-  #menu-toggle ~ .menu li {
-    height: 0;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  #menu-toggle:checked ~ .menu li {
-    border-bottom: 1px solid var(--primary);
-    font-size: 3rem;
-    height: 1em;
-    line-height: 3.2rem;    
-    padding: 0rem;
-    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  #menu-toggle:checked ~ .menu li a{
-    color: var(--secondary);
-    text-decoration: none;
-  }
+  
+#menu-toggle:checked ~ .menu{
+  background-color: var(--primaryCeroCuatro);
+  z-index: 3;
+}
 
-  /* Estilos específicos para cada elemento del menú en pantallas más pequeñas */
-  .menu > li {
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0.5em 0;
-    width: 100%;
-    color: white;
-  }
+#menu-toggle ~ .menu li {
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+#menu-toggle:checked ~ .menu li {
+  border-bottom: 1px solid var(--primary);
+  font-size: 3rem;
+  height: 1em;
+  line-height: 3.2rem;    
+  transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+#menu-toggle:checked ~ .menu li a{
+  color: var(--secondary);
+}
