@@ -3,8 +3,8 @@ header{
     /*Ancho del header*/
     grid-column: 1/-1;
     /*Declaro grid interior*/
-    display: grid;
-    grid-template-columns: [nav-start] 5vw [nav-end] 60vw [title-end] minmax(auto, max-content) [interaction-end];
+    display: flex;
+    flex-direction: column;
 }
 /*Diseño del logo*/
 .header__logo{
@@ -16,6 +16,14 @@ header{
     /*Color*/
     color: var(--secondary);
 }
+.header__interaccion{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem 0 3rem;
+    align-items: center;
+    width: 100%;
+}
 /*Colocacion de botones*/
 .header__userInteraction{
     /*Colocado*/
@@ -26,7 +34,6 @@ header{
     display: flex;
     /*Alienado*/
     align-items: center;
-    background-color: red;
 }
 /*Boton de carrito*/
 .header__userInteraction__shop{
@@ -60,7 +67,7 @@ header{
     /*Margen laterales*/
     margin: 0 .1rem;
     /*tamaño de la fuente*/
-    font-size: 3vw;
+    font-size: 1.5rem;
     /*pading vertical y horizontal*/
     padding: 1rem 2vw;
     /*Sombreado*/

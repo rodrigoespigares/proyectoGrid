@@ -33,13 +33,13 @@
 body{
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: [header-start] 10vh [hero-start] 90vh [hero-end] repeat(2,[row-start] 100vh[row-end]) [footer-start] minmax(min-content,60vh) [footer-end];
+    grid-template-rows: [header-start] minmax(10vh,min-content) [hero-start] 90vh [hero-end] repeat(2,[row-start] 100vh[row-end]) [footer-start] minmax(min-content,60vh) [footer-end];
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 }
 h1{
     font-family: 'Cinzel Decorative', serif;
-    font-size: 10vw;
+    font-size: 5rem;
 }
 h2{
     font-family: 'Montserrat', sans-serif;

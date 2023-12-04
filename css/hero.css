@@ -6,8 +6,7 @@ main{
 }
 #hero{
     grid-row: hero-start/hero-end;
-    background-color: red;
-        
+    background-color: red; 
 }
 .hero__background{
     background-image: url(../img/background.jpg);
