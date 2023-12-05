@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi tienda</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <link rel="stylesheet" href="css/style.css"> <!-- Estilos básicos-->
+    <link rel="stylesheet" href="css/normalize.css"> <!-- Estilos básicos-->
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="css/footer.css">
     
@@ -20,27 +21,26 @@
         <div class="header__logo">
             <a href="index.html" class="header__logo"><h1>Zarando</h1></a>
         </div>
-        <div class="header__interaccion">
-            <nav class="top-nav header__nav">
-                <input id="menu-toggle" type="checkbox" />
-                <label class='menu-button-container' for="menu-toggle">
+        <nav class="top-nav header__nav">
+            <input id="menu-toggle" type="checkbox" />
+            <label class='menu-button-container' for="menu-toggle">
                 <div class='menu-button'></div>
-                </label>
-                <ul class="menu">
-                    <li class="header__nav__container"><a href="#" class="header__nav__container__link">Mujer</a></li>
-                    <li class="header__nav__container"><a href="#" class="header__nav__container__link">Hombre</a></li>
-                    <li class="header__nav__container"><a href="#" class="header__nav__container__link">Accesorios</a></li>
-                </ul>
-            </nav>
-            
-            <div class="header__userInteraction">
-                <div class="header__userInteraction__container">
-                    <button class="header__userInteraction__container__login">Iniciar Sesión</button>
-                    <button class="header__userInteraction__container__register">Registrarse</button>
-                </div>
-                <button class="header__userInteraction__shop"><i class="ph ph-shopping-cart-simple"></i></button>
+            </label>
+            <ul class="menu">
+                <li class="header__nav__container"><a href="#" class="header__nav__container__link">Mujer</a></li>
+                <li class="header__nav__container"><a href="#" class="header__nav__container__link">Hombre</a></li>
+                <li class="header__nav__container"><a href="#" class="header__nav__container__link">Accesorios</a></li>
+            </ul>
+        </nav>
+        
+        <div class="header__userInteraction">
+            <div class="header__userInteraction__container">
+                <button class="header__userInteraction__container__login">Iniciar Sesión</button>
+                <button class="header__userInteraction__container__register">Registrarse</button>
             </div>
+            <button class="header__userInteraction__shop"><i class="ph ph-shopping-cart-simple"></i></button>
         </div>
+        
     </header>
     <!--*-*-*-*-*-*-*-*-*-*-*-*-*-* MAIN *-*-*-*-*-*-*-*-*-*-*-*-*-*-->
     <main id="app">
@@ -48,8 +48,11 @@
         <section>
             <!--*-*-*-*-*-*-*-*-*-*-*-*-*-* HERO *-*-*-*-*-*-*-*-*-*-*-*-*-*-->
             <section id="hero">
-                <div class="hero__background"></div>
-                <h2></h2>
+                <article class="hero__info">
+                    <h2 class="hero__info__title">Temporada invierno 23-24</h2>
+                    <p class="hero__info__p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, distinctio! Accusamus tempore tempora, quis cum beatae nulla dolore, voluptatem dolorem et libero quaerat, quod velit non nisi ea. Temporibus delectus quos libero iure incidunt eos. Molestias nemo autem numquam, odit asperiores voluptatibus quidem illo ipsum iure similique dolore, iste alias!</p>
+                </article>
+                
             </section>
         </section>
     </main>

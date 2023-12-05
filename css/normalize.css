@@ -19,8 +19,9 @@
 /* Declaracion de variables*/
 :root{
     /* Color proncipal */
-    --primary: #696969;
-    --primaryCeroCuatro: rgba(105, 105, 105,0.6);
+    --primary: rgb(105, 105, 105);
+    --primaryCeroOcho: rgba(105, 105, 105,0.8);
+    --primaryCeroSeis: rgba(105, 105, 105,0.6);
     /* Letra para enlaces */
     --letter: #000;
     /* Para los hover */
@@ -33,7 +34,7 @@
 body{
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: [header-start] minmax(10vh,min-content) [hero-start] 90vh [hero-end] repeat(2,[row-start] 100vh[row-end]) [footer-start] minmax(min-content,60vh) [footer-end];
+    grid-template-rows: [header-start] minmax(10vh,15vh) [main-start] 85vh [hero-end] repeat(2,[row-start] 100vh[row-end]) [footer-start] minmax(min-content,60vh) [footer-end];
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 }
@@ -44,4 +45,10 @@ h1{
 h2{
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
+    font-size: 3rem;
+}
+p{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 1.5rem;
 }

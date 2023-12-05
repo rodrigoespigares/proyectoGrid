@@ -2,14 +2,16 @@
 header{
     /*Ancho del header*/
     grid-column: 1/-1;
-    /*Declaro grid interior*/
+    /*Alto del header*/
+    /*Declaro flex interior*/
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
+    /*Padding interior*/
+    /*Linea divisoria inferior*/
+    border-bottom: .1rem solid var(--primary);
 }
 /*Diseño del logo*/
 .header__logo{
-    /*Colocado*/
-    grid-column: nav-end/title-end;
     /*Colocacion*/
     justify-self: center;
     align-self: center;
@@ -19,15 +21,13 @@ header{
 .header__interaccion{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: end;
     padding: 0 2rem 0 3rem;
     align-items: center;
     width: 100%;
 }
 /*Colocacion de botones*/
 .header__userInteraction{
-    /*Colocado*/
-    grid-column: title-end/interaction-end;
     /*Tamaño icono*/
     font-size: 2rem;
     /*Necesario para row*/

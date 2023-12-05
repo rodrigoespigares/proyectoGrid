@@ -1,12 +1,11 @@
 /* Estilo para la barra de navegación en la parte superior */
 .top-nav {
-  grid-column: nav-start/nav-end;
   color: var(--primary);
 }
 
 /* Estilo para el menú de navegación */
 .menu {
-  position: absolute;
+  position: fixed;
   display: flex;
   top: 0;
   left: 0;
@@ -29,10 +28,15 @@
 /* Estilo para el contenedor del botón del menú */
 .menu-button-container {
   display: flex;
-  height: 100%;
+  top: 10px;
+  left: 10px;
+  width: 100px;
+  height: 100px;
   cursor: pointer;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  z-index: 4;
 }
 
 /* Estilo para el botón del menú (hamburguesa) y sus efectos de animación */
@@ -49,7 +53,7 @@
   width: 30px;
   transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
   border-radius: 2px;
-  z-index: 4;
+  z-index: 3;
 }
 
 .menu-button::before {
@@ -64,6 +68,7 @@
 
 /* Efectos de animación al hacer clic en el botón del menú */
 #menu-toggle:checked + .menu-button-container .menu-button::before {
+  background-color: white;
   margin-top: 0px;
   transform: rotate(405deg);
 }
@@ -73,14 +78,15 @@
 }
 
 #menu-toggle:checked + .menu-button-container .menu-button::after {
+  background-color: white;
   margin-top: 0px;
   transform: rotate(-405deg);
 }
 
   
 #menu-toggle:checked ~ .menu{
-  background-color: var(--primaryCeroCuatro);
-  z-index: 3;
+  background-color: var(--primaryCeroOcho);
+  z-index: 1;
 }
 
 #menu-toggle ~ .menu li {
@@ -91,12 +97,14 @@
   transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 #menu-toggle:checked ~ .menu li {
-  border-bottom: 1px solid var(--primary);
   font-size: 3rem;
-  height: 1em;
-  line-height: 3.2rem;    
+  height: 4em;
+  display: flex;
+  align-items: center;
   transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 #menu-toggle:checked ~ .menu li a{
-  color: var(--secondary);
+  color: white;
+  font-weight: 600;
+  text-align: center;
 }
