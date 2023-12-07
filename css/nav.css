@@ -28,10 +28,10 @@
 /* Estilo para el contenedor del botón del menú */
 .menu-button-container {
   display: flex;
-  top: 10px;
-  left: 10px;
-  width: 100px;
-  height: 100px;
+  top: 3%;
+  left: 3%;
+  height: 5rem;
+  width: 4rem;
   cursor: pointer;
   justify-content: center;
   align-items: center;
