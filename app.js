@@ -1,19 +1,49 @@
 window.onload = () => {
   const { createApp } = Vue
       
-createApp({
-    data() {
-        return {
-            showPrincipal:true,
-            showCatalogo:false,
-            showDetalle:false,
-            showCarrito:false,
-        }
-    },
-    methods:{
+    createApp({
+        data() {
+            return {
+                showPrincipal:false,
+                showCatalogo:true,
+                showDetalle:false,
+                showCarrito:false,
+                showRegister:false,
+                check:false,
+                productos:[],
+            }
+        },
+        methods:{
+            verCatalogo(){
+                console.log("hola");
+                this.check = false,
+                this.showPrincipal = false,
+                this.showCatalogo = true,
+                this.showDetalle = false,
+                this.showCarrito = false,
+                this.showRegister = false
+            },
+            cargaProductos(){
+                fetch("prueba.json")
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Error en la petición AJAX');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        this.productos = (data);
 
-    }
-}).mount('#app')
+                    })
+                    .catch(error => {
+                        console.error('Error al hacer la petición AJAX:', error);
+                    });
+            }
+        },
+        mounted() {
+            this.cargaProductos();
+        }
+    }).mount('#app')
 
 // Trying Behaviour Delegation instead of "JS classes"
 

@@ -1,0 +1,15 @@
+#footer{
+    grid-row: footer-start/footer-end;
+    grid-column: 1/-1;
+    border-top: .1rem solid var(--primary) ;
+    display: grid;
+    grid-template-columns: repeat(6,minmax(16.66%,min-content));
+    font-size: 10rem;
+    align-items: center;
+}
+#footer__help{
+    grid-column: 2/3;
+}
+#footer h3{
+    margin-bottom: 1rem;
+}

@@ -19,17 +19,17 @@
 </head>
 <body id="app">
     <!--*-*-*-*-*-*-*-*-*-*-*-*-*-* HEADER *-*-*-*-*-*-*-*-*-*-*-*-*-*-->
-    <header>
+    <header v-if="!showRegister">
         <div class="header__logo">
             <a href="index.html" class="header__logo"><h1>Zarando</h1></a>
         </div>
         <nav class="top-nav header__nav">
-            <input id="menu-toggle" type="checkbox" />
+            <input id="menu-toggle" type="checkbox" v-model="check"/>
             <label class='menu-button-container' for="menu-toggle">
                 <div class='menu-button'></div>
             </label>
             <ul class="menu">
-                <li class="header__nav__container"><a href="#" class="header__nav__container__link">Mujer</a></li>
+                <li class="header__nav__container"><a href="#" class="header__nav__container__link" @click="verCatalogo()">Mujer</a></li>
                 <li class="header__nav__container"><a href="#" class="header__nav__container__link">Hombre</a></li>
                 <li class="header__nav__container"><a href="#" class="header__nav__container__link">Accesorios</a></li>
             </ul>
@@ -101,7 +101,7 @@
                         </div>
                     </section>
                 </section>
-                <!--*-*-*-*-*-*-*-*-*-*-*-*-*-* EMAIL *-*-*-*-*-*-*-*-*-*-*-*-*-*-->
+                <!--*-*-*-*-*-*-*-*-*-*-*-*-*-* NEWS LETTER *-*-*-*-*-*-*-*-*-*-*-*-*-*-->
                 <section id="personal">
                     <form action="" method="post">
                         <label for="news"><h2>SUSCRIBETE A NUESTRO NEWS LETTER</h2></label>
@@ -111,6 +111,55 @@
                 </section>
             </section>
         </section>
+        <section v-if="showCatalogo">
+            <div v-for="producto in productos">
+                <img :src="producto.img" :alt="producto.alt">
+                <h3>{{producto.name}}</h3>
+                <p>{{producto.price}}</p>
+                <button>Comprar</button>
+            </div>
+        </section>
     </main>
+    <footer id="footer" v-if="!showRegister">
+        <section id="footer__help">
+            <h3>Ayuda</h3>
+            <ul>
+                <li><a href="#">Uso del producto</a></li>
+                <li><a href="#">Preguntas frecuentes</a></li>
+                <li><a href="#">Cuestiones</a></li>
+                <li><a href="#">Foro</a></li>
+            </ul>
+        </section>
+        <section id="footer__us">
+            <h3>Nosotros</h3>
+            <ul>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="#">Sobre nosotros</a></li>
+                <li><a href="#">Uso de nuestra marca</a></li>
+                <li><a href="#">Conctacto</a></li>
+            </ul>
+        </section>
+        <section id="footer__legal">
+            <h3>Legal</h3>
+            <ul>
+                <li><a href="#">Contacto legal</a></li>
+                <li><a href="#">Marca registrada</a></li>
+                <li><a href="#">Privacidad</a></li>
+                <li><a href="#">Seguridad y cookies</a></li>
+            </ul>
+        </section>
+        <section id="footer__info">
+            <div>
+                <h3>Metodos de pago</h3>
+
+            </div>
+            <div class="rrss__content__social">
+                <a href="facebook.com"><i class="ph-light ph-facebook-logo"></i></a>
+                <a href="instragram.es"><i class="ph-light ph-instagram-logo"></i></a>
+                <a href="twitter.es"><i class="ph-light ph-twitter-logo"></i></a>
+                <a href="youtube.com"><i class="ph-light ph-youtube-logo"></i></a>
+            </div>
+        </section>
+    </footer>
 </body>
 </html>
