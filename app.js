@@ -4,8 +4,8 @@ window.onload = () => {
     createApp({
         data() {
             return {
-                showPrincipal:false,
-                showCatalogo:true,
+                showPrincipal:true,
+                showCatalogo:false,
                 showDetalle:false,
                 showCarrito:false,
                 showRegister:false,

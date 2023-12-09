@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="css/banner.css">
     <link rel="stylesheet" href="css/rrss.css">
+    <link rel="stylesheet" href="css/catalogo.css">
     <link rel="stylesheet" href="css/footer.css">
     
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -111,11 +112,15 @@
                 </section>
             </section>
         </section>
-        <section v-if="showCatalogo">
-            <div v-for="producto in productos">
-                <img :src="producto.img" :alt="producto.alt">
+        <!--*-*-*-*-*-*-*-*-*-*-*-*-*-* PRINCIPAL *-*-*-*-*-*-*-*-*-*-*-*-*-*-->
+        <section v-if="showCatalogo" id="catalogo">
+            <!--*-*-*-*-*-*-*-*-*-*-*-*-*-* PRODUCTOS *-*-*-*-*-*-*-*-*-*-*-*-*-*-->
+            <div v-for="producto in productos" class="catalogo__producto">
+                <div class="catalogo__producto__content">
+                    <img class="catalogo__producto__content__img" :src="producto.img" :alt="producto.alt">
+                </div>
                 <h3>{{producto.name}}</h3>
-                <p>{{producto.price}}</p>
+                <p>{{producto.price}}€</p>
                 <button>Comprar</button>
             </div>
         </section>

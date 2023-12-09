@@ -1,0 +1,22 @@
+#catalogo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 2rem 0;
+    row-gap: 2rem;
+    
+}
+.catalogo__producto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 3rem;
+    border: .1rem solid var(--secondary);
+    padding: 2rem;
+}
+.catalogo__producto__content{
+    width: 60%;
+}
+.catalogo__producto__content__img{
+    width: 100%;
+}

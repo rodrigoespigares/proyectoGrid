@@ -68,5 +68,12 @@
         "alt":"Producto 10",
         "name":"Falda veige",
         "price":22.40
+    },
+    {
+        "id":"11",
+        "img":"img/productos/producto_11.jpg",
+        "alt":"Producto 11",
+        "name":"Bolso negro",
+        "price":22.40
     }
 ]
