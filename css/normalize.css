@@ -34,7 +34,7 @@
 body{
     display: grid;
     grid-template-columns: repeat(12, minmax(max-content, 1fr));
-    grid-template-rows: [header-start] minmax(10vh,max-content) [main-start] 85vh [hero-end] repeat(2,[row-start] 100vh[row-end]) [footer-start] minmax(min-content,60vh) [footer-end];
+    grid-template-rows: [header-start] minmax(10vh,max-content) [main-start] 85vh [hero-end] repeat(2,[row-start] 100vh[row-end]) [footer-start] minmax(min-content,40vh) [footer-end];
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 }

@@ -4,5 +4,5 @@ main{
 }
 #index{
     display: grid;
-    grid-template-rows: [hero-start]90vh[hero-end]100vh[banner-end];
+    grid-template-rows: [hero-start]90vh[hero-end]100vh[banner-end]100vh[contact-end];
 }
