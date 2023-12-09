@@ -7,20 +7,27 @@ window.onload = () => {
                 showPrincipal:true,
                 showCatalogo:false,
                 showDetalle:false,
-                showCarrito:false,
                 showRegister:false,
                 check:false,
                 productos:[],
+                idSeleccionado:1,
             }
         },
         methods:{
             verCatalogo(){
-                console.log("hola");
                 this.check = false,
                 this.showPrincipal = false,
                 this.showCatalogo = true,
                 this.showDetalle = false,
-                this.showCarrito = false,
+                this.showRegister = false
+            },
+            verDetalle(id){
+                id = id-1
+                this.idSeleccionado = id,
+                this.check = false,
+                this.showPrincipal = false,
+                this.showCatalogo = false,
+                this.showDetalle = true,
                 this.showRegister = false
             },
             cargaProductos(){

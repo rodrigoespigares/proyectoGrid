@@ -112,17 +112,42 @@
                 </section>
             </section>
         </section>
-        <!--*-*-*-*-*-*-*-*-*-*-*-*-*-* PRINCIPAL *-*-*-*-*-*-*-*-*-*-*-*-*-*-->
+        <!--*-*-*-*-*-*-*-*-*-*-*-*-*-* CATALOGO *-*-*-*-*-*-*-*-*-*-*-*-*-*-->
         <section v-if="showCatalogo" id="catalogo">
             <!--*-*-*-*-*-*-*-*-*-*-*-*-*-* PRODUCTOS *-*-*-*-*-*-*-*-*-*-*-*-*-*-->
             <div v-for="producto in productos" class="catalogo__producto">
                 <div class="catalogo__producto__content">
                     <img class="catalogo__producto__content__img" :src="producto.img" :alt="producto.alt">
                 </div>
-                <h3>{{producto.name}}</h3>
-                <p>{{producto.price}}€</p>
-                <button>Comprar</button>
+                <h3 class="catalogo__producto__name">{{producto.name}}</h3>
+                <p class="catalogo__producto__price">{{producto.price}}€</p>
+                <a @click="verDetalle(producto.id)" class="button__purple" href="#">Ver más</a>
             </div>
+        </section>
+        <!--*-*-*-*-*-*-*-*-*-*-*-*-*-* DETALLE *-*-*-*-*-*-*-*-*-*-*-*-*-*-->
+        <section v-if="showDetalle" id="detalle">
+            
+            <section id="detalle__Galeria">
+                <div class="detalle__galeria__principal" >
+                    <img v-if="productos[idSeleccionado]" :src="productos[idSeleccionado].img" alt="">
+                </div>
+                <div class="detalle__galeria__secundaria">
+                    <div class="detalle__galeria__secundaria__content" v-if="productos[idSeleccionado]" v-for="img in productos[idSeleccionado].detalle.images">
+                        <img class="detalle__galeria__secundaria__content__img" :src="img" alt="">
+                    </div>
+                </div>
+            </section>
+            <section id="detalle__Texto">
+                <h2 v-if="productos[idSeleccionado]">{{productos[idSeleccionado].name}}</h2>
+                <p v-if="productos[idSeleccionado]">{{productos[idSeleccionado].detalle.description}}</p>
+                <div class="dellate__texto__tallas">
+                    <select name="" id="">
+                        <option value="" disabled selected>Tallas</option>
+                        <option v-if="productos[idSeleccionado]" v-for="talla in productos[idSeleccionado].detalle.tallas" :value="talla">{{talla}}</option>
+                    </select>
+                </div>
+                <a href="#">Comprar</a>
+            </section>
         </section>
     </main>
     <footer id="footer" v-if="!showRegister">
