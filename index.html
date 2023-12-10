@@ -13,8 +13,10 @@
     <link rel="stylesheet" href="css/banner.css">
     <link rel="stylesheet" href="css/rrss.css">
     <link rel="stylesheet" href="css/catalogo.css">
+    <link rel="stylesheet" href="css/detalle.css">
     <link rel="stylesheet" href="css/footer.css">
-    
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css" rel="stylesheet">
+
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <script src="app.js"></script>
 </head>
@@ -138,15 +140,32 @@
                 </div>
             </section>
             <section id="detalle__Texto">
-                <h2 v-if="productos[idSeleccionado]">{{productos[idSeleccionado].name}}</h2>
-                <p v-if="productos[idSeleccionado]">{{productos[idSeleccionado].detalle.description}}</p>
-                <div class="dellate__texto__tallas">
-                    <select name="" id="">
-                        <option value="" disabled selected>Tallas</option>
-                        <option v-if="productos[idSeleccionado]" v-for="talla in productos[idSeleccionado].detalle.tallas" :value="talla">{{talla}}</option>
-                    </select>
+                <div class="detalle__texto__header">
+                    <h2 v-if="productos[idSeleccionado]">{{productos[idSeleccionado].name}}</h2>
+                    <p v-if="productos[idSeleccionado]">{{productos[idSeleccionado].detalle.description}}</p>
                 </div>
-                <a href="#">Comprar</a>
+                <p>Envios disponibles a todos las ciudades de la Península Ibérica</p>
+                <p>Con motivo de las compras navideñas, los pedidos realizados desde el 15 de noviembre podrán devolverse hasta el 10 de enero</p>
+                <div class="detalle__texto__tallas">
+                    <h3>Tallas:</h3>
+                    <div class="detalle__texto__tallas__detalle">
+                        <a v-if="productos[idSeleccionado]" v-for="talla in productos[idSeleccionado].detalle.tallas" :value="talla">{{talla}}</a>
+                    </div>
+                </div>
+                <a href="#" class="button__purple">Comprar</a>
+            </section>
+            <section id="detalle__Productos">
+                <h2>Más productos</h2>
+                <article v-for="producto in productos">
+                    <div class="detalle__producto__content">
+                        <img :src="producto.img" alt="">
+                    </div>
+                    <div class="detalle__producto__texto">
+                        <p>{{producto.name}}</p>
+                        <p>{{producto.price}}€</p>
+                    </div>
+                    <a @click="verDetalle(producto.id)" class="button__purple" href="#">Ver más</a>
+                </article>
             </section>
         </section>
     </main>
@@ -179,9 +198,13 @@
             </ul>
         </section>
         <section id="footer__info">
-            <div>
+            <div class="metodos">
                 <h3>Metodos de pago</h3>
-
+                <div class="metodos__icon">
+                    <i class="ri-visa-line"></i>
+                    <i class="ri-paypal-line"></i>
+                    <i class="ri-mastercard-line"></i>
+                </div>
             </div>
             <div class="rrss__content__social">
                 <a href="facebook.com"><i class="ph-light ph-facebook-logo"></i></a>
