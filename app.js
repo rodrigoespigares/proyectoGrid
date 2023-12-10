@@ -30,6 +30,13 @@ window.onload = () => {
                 this.showDetalle = true,
                 this.showRegister = false
             },
+            verRegistro(){
+              this.check = false,
+              this.showPrincipal = false,
+              this.showCatalogo = false,
+              this.showDetalle = false,
+              this.showRegister = true
+            },
             cargaProductos(){
                 fetch("prueba.json")
                     .then(response => {
