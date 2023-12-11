@@ -41,8 +41,8 @@
         
         <div class="header__userInteraction">
             <div class="header__userInteraction__container">
-                <button @click="verRegistro()" class="header__userInteraction__container__login">Iniciar Sesión</button>
-                <button @click="verRegistro()" class="header__userInteraction__container__register">Registrarse</button>
+                <button @click="verRegistro('login')" class="header__userInteraction__container__login" id="login">Iniciar Sesión</button>
+                <button @click="verRegistro('register')" class="header__userInteraction__container__register" id="register">Registrarse</button>
             </div>
             <button class="header__userInteraction__shop"><i class="ph ph-shopping-cart-simple"></i></button>
         </div>

@@ -30,12 +30,19 @@ window.onload = () => {
                 this.showDetalle = true,
                 this.showRegister = false
             },
-            verRegistro(){
-              this.check = false,
-              this.showPrincipal = false,
-              this.showCatalogo = false,
-              this.showDetalle = false,
-              this.showRegister = true
+            verRegistro(click){
+                this.check = false;
+                this.showPrincipal = false;
+                this.showCatalogo = false;
+                this.showDetalle = false;
+                this.showRegister = true;
+                const container = document.getElementById('container');
+                if(click=="register"){
+                    
+                    container.classList.add("right-panel-active");
+                }else{
+                    container.classList.remove("right-panel-active");
+                }
             },
             cerrarLogin(){
                 this.check = false,
