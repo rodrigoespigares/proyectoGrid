@@ -37,6 +37,13 @@ window.onload = () => {
               this.showDetalle = false,
               this.showRegister = true
             },
+            cerrarLogin(){
+                this.check = false,
+                this.showPrincipal = true,
+                this.showCatalogo = false,
+                this.showDetalle = false,
+                this.showRegister = false
+            },
             cargaProductos(){
                 fetch("prueba.json")
                     .then(response => {
@@ -59,65 +66,54 @@ window.onload = () => {
         }
     }).mount('#app')
 
-// Trying Behaviour Delegation instead of "JS classes"
+    const slider = document.querySelector(".items");
+    const slides = document.querySelectorAll(".item");
+    const button = document.querySelectorAll(".button");
 
-const ANIMATING_CLASS = 'slider__item--animating';
+    let current = 0;
+    let prev = 4;
+    let next = 1;
 
-const Slider = {
-  init() {
-    this.sliderEl = document.querySelector('.slider');
-    this.slideInnerEl = document.querySelector('.slider__inner');
-    this.sliderItemsEl = document.querySelectorAll('.slider__item');
-    this.offset = 0;
-    this.direction = 'left';
-    this.maxOffset = (this.sliderItemsEl.length - 1) * 100;
-
-    this.slideInnerEl.addEventListener('transitionend', this.onSliderTransitionEnd.bind(this));
-    setInterval(this.slide.bind(this), 6000);
-  },
-  slide() {
-    if (this.isMaxLeft()) {
-      this.direction = 'right';
-    } else if (this.isMaxRight()) {
-      this.direction = 'left';
+    for (let i = 0; i < button.length; i++) {
+        button[i].addEventListener("click", () => i == 0 ? gotoPrev() : gotoNext());
     }
 
-    this.moveSlider();
-  },
-  isMaxLeft() {
-    return this.offset <= -this.maxOffset;
-  },
-  isMaxRight() {
-    return this.offset >= 0;
-  },
-  getCurrentPage() {
-    if (this.offset < 0) {
-      return (this.offset * -1) / 100;
+    const gotoPrev = () => current > 0 ? gotoNum(current - 1) : gotoNum(slides.length - 1);
+
+    const gotoNext = () => current < 4 ? gotoNum(current + 1) : gotoNum(0);
+
+    const gotoNum = number => {
+        current = number;
+        prev = current - 1;
+        next = current + 1;
+
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].classList.remove("active");
+            slides[i].classList.remove("prev");
+            slides[i].classList.remove("next");
+        }
+
+        if (next == 5) {
+            next = 0;
+        }
+
+        if (prev == -1) {
+            prev = 4;
+        }
+
+        slides[current].classList.add("active");
+        slides[prev].classList.add("prev");
+        slides[next].classList.add("next");
     }
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
 
-    return this.offset / 100;
-  },
-  getSignal() {
-    return this.direction === 'left' ? -1 : 1;
-  },
-  onSliderTransitionEnd() {
-    const signal = this.getSignal();
-    const currentPage = this.getCurrentPage();
+    signUpButton.addEventListener('click', () => {
+        container.classList.add("right-panel-active");
+    });
 
-    this.sliderItemsEl.forEach(element => element.classList.remove(ANIMATING_CLASS));
-  },
-  moveSlider() {
-    const signal = this.getSignal();
-    const currentPage = this.getCurrentPage();
-
-    this.offset = this.offset + (signal * 100);
-    this.sliderItemsEl[currentPage].classList.add(ANIMATING_CLASS);
-    this.sliderItemsEl[currentPage + (-1 * signal)].classList.add(ANIMATING_CLASS);
-    this.slideInnerEl.style.setProperty('--slider-offset', `${this.offset}%`);
-  }
-};
-
-const slider = Object.create(Slider);
-slider.init();
-
+    signInButton.addEventListener('click', () => {
+        container.classList.remove("right-panel-active");
+    });
 }

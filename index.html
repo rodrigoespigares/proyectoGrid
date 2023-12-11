@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/normalize.css"> <!-- Estilos básicos-->
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/registro.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="css/banner.css">
@@ -50,7 +51,7 @@
     <!--*-*-*-*-*-*-*-*-*-*-*-*-*-* MAIN *-*-*-*-*-*-*-*-*-*-*-*-*-*-->
     <main>
         <!--*-*-*-*-*-*-*-*-*-*-*-*-*-* PRINCIPAL *-*-*-*-*-*-*-*-*-*-*-*-*-*-->
-        <section v-if="showPrincipal" id="index">
+        <section v-show="showPrincipal" id="index">
             <!--*-*-*-*-*-*-*-*-*-*-*-*-*-* HERO *-*-*-*-*-*-*-*-*-*-*-*-*-*-->
             <section id="hero">
                 <div class="slider">
@@ -73,6 +74,12 @@
                                 <p class="hero__info__p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, distinctio! Accusamus tempore tempora, quis cum beatae nulla dolore, voluptatem dolorem et libero quaerat, quod velit non nisi ea. Temporibus delectus quos libero iure incidunt eos. Molestias nemo autem numquam, odit asperiores voluptatibus quidem illo ipsum iure similique dolore, iste alias!</p>
                             </div>
                         </article>
+                        <article class="slider__item slider__4">
+                            <div class="hero__info">
+                                <h2 class="hero__info__title">Fiesta de año nuevo</h2>
+                                <p class="hero__info__p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, distinctio! Accusamus tempore tempora, quis cum beatae nulla dolore, voluptatem dolorem et libero quaerat, quod velit non nisi ea. Temporibus delectus quos libero iure incidunt eos. Molestias nemo autem numquam, odit asperiores voluptatibus quidem illo ipsum iure similique dolore, iste alias!</p>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </section>
@@ -84,6 +91,29 @@
                         <p class="banner__header__contain--text">Tienda de moda y accesorios ONLINE</p>
                     </div>
                 </div>
+                <section id="banner__slider">
+                    <div class="items">
+                        <div class="item active">
+                            <img src="http://via.placeholder.com/500x500">
+                        </div>
+                        <div class=" item next">
+                            <img src="http://via.placeholder.com/500x500">
+                        </div>
+                        <div class="item">
+                            <img src="http://via.placeholder.com/500x500">
+                        </div>
+                        <div class="item">
+                            <img src="http://via.placeholder.com/500x500">
+                        </div>
+                        <div class="item prev">
+                            <img src="http://via.placeholder.com/500x500">
+                        </div>
+                        <div class="button-container">
+                            <div class="button"><i class="ri-arrow-left-circle-line"></i></div>
+                            <div class="button"><i class="ri-arrow-right-circle-line"></i></div>
+                        </div>
+                    </div>
+                </section>
             </section>
             <!--*-*-*-*-*-*-*-*-*-*-*-*-*-* CONTACT *-*-*-*-*-*-*-*-*-*-*-*-*-*-->
             <section id="contact">
@@ -115,7 +145,7 @@
             </section>
         </section>
         <!--*-*-*-*-*-*-*-*-*-*-*-*-*-* CATALOGO *-*-*-*-*-*-*-*-*-*-*-*-*-*-->
-        <section v-if="showCatalogo" id="catalogo">
+        <section v-show="showCatalogo" id="catalogo">
             <!--*-*-*-*-*-*-*-*-*-*-*-*-*-* PRODUCTOS *-*-*-*-*-*-*-*-*-*-*-*-*-*-->
             <div v-for="producto in productos" class="catalogo__producto">
                 <div class="catalogo__producto__content">
@@ -127,7 +157,7 @@
             </div>
         </section>
         <!--*-*-*-*-*-*-*-*-*-*-*-*-*-* DETALLE *-*-*-*-*-*-*-*-*-*-*-*-*-*-->
-        <section v-if="showDetalle" id="detalle">
+        <section v-show="showDetalle" id="detalle">
             
             <section id="detalle__Galeria">
                 <div class="detalle__galeria__principal" >
@@ -169,51 +199,54 @@
             </section>
         </section>
         <!--*-*-*-*-*-*-*-*-*-*-*-*-*-* REGISTRO Y LOGIN *-*-*-*-*-*-*-*-*-*-*-*-*-*-->
-        <section v-if="showRegister" id="login__register">
-            <section>
-                <form action="" method="POST">
-                    <h2>Login</h2>
-                    <div>
-                        <label for="email">Email</label>
-                        <input type="text" name="" id="email">
+        <section v-show="showRegister" id="login__register">
+            <button @click="cerrarLogin()" class="cerrar"><i class="ri-close-fill"></i></button>
+            <div class="container" id="container">
+                <div class="form-container sign-up-container">
+                    <form action="#">
+                        <h2>Create Account</h2>
+                        <div class="social-container">
+                            <a href="#" class="social"><i class="ri-facebook-fill"></i></i></a>
+                            <a href="#" class="social"><i class="ri-google-fill"></i></a>
+                            <a href="#" class="social"><i class="ri-linkedin-fill"></i></a>
+                        </div>
+                        <span>or use your email for registration</span>
+                        <input type="text" placeholder="Name" />
+                        <input type="email" placeholder="Email" />
+                        <input type="password" placeholder="Password" />
+                        <button>Sign Up</button>
+                    </form>
+                </div>
+                <div class="form-container sign-in-container">
+                    <form action="#">
+                        <h2>Sign in</h2>
+                        <div class="social-container">
+                            <a href="#" class="social"><i class="ri-facebook-fill"></i></a>
+                            <a href="#" class="social"><i class="ri-google-fill"></i></a>
+                            <a href="#" class="social"><i class="ri-linkedin-fill"></i></a>
+                        </div>
+                        <span>or use your account</span>
+                        <input type="email" placeholder="Email" />
+                        <input type="password" placeholder="Password" />
+                        <a href="#">Forgot your password?</a>
+                        <button>Sign In</button>
+                    </form>
+                </div>
+                <div class="overlay-container">
+                    <div class="overlay">
+                        <div class="overlay-panel overlay-left">
+                            <h2 class="darkGround">Welcome Back!</h2>
+                            <p class="darkGround">To keep connected with us please login with your personal info</p>
+                            <button class="ghost" id="signIn">Sign In</button>
+                        </div>
+                        <div class="overlay-panel overlay-right">
+                            <h2 class="darkGround">Hello, Friend!</h2>
+                            <p class="darkGround">Enter your personal details and start journey with us</p>
+                            <button class="ghost" id="signUp">Sign Up</button>
+                        </div>
                     </div>
-                    <div>
-                        <label for="password">Contraseña</label>
-                        <input type="text" name="" id="password">
-                    </div>
-                    <button type="submit">Iniciar Sesión</button>
-                </form>
-            </section>
-            <section>
-                <form action="" method="POST">
-                    <h2>Registro</h2>
-                    <div>
-                        <label for="user">Usuario</label>
-                        <input type="text" name="" id="user">
-                    </div>
-                    <div>
-                        <label for="email">Email</label>
-                        <input type="text" name="" id="email">
-                    </div>
-                    <div>
-                        <label for="password">Contraseña</label>
-                        <input type="text" name="" id="password">
-                    </div>
-                    <div>
-                        <label for="password2">Confirmar contraseña</label>
-                        <input type="text" name="" id="password2">
-                    </div>
-                    <div>
-                        <label for="name">Nombre</label>
-                        <input type="text" name="" id="name">
-                    </div>
-                    <div>
-                        <label for="subname">Apellidos</label>
-                        <input type="text" name="" id="subname">
-                    </div>
-                    <button type="submit">Registrarse</button>
-                </form>
-            </section>
+                </div>
+            </div>
         </section>
     </main>
     <footer id="footer" v-if="!showRegister">

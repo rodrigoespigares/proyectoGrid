@@ -7,6 +7,23 @@
     grid-row: hero-start/hero-end;
 }
 .slider {
+	margin: auto;
+	overflow: hidden;
+}
+
+.slider .slider__inner {
+	display: flex;
+	padding: 0;
+	width: 400%;
+	
+	animation: cambio 20s infinite alternate linear;
+}
+
+.slider .slider__item {
+	width: 100%;
+	list-style: none;
+}
+.slider {
     overflow: hidden;
     height: 100%;
     max-width: 100%;
@@ -46,6 +63,11 @@
     background-repeat: no-repeat;
     background-size: cover; 
 }
+.slider__4{
+    background-image: url(../img/background5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
 .hero__info{
     background-color: white;
     width: max-content;
@@ -55,4 +77,18 @@
 .hero__info__p{
     padding-top: 1rem;
     max-width: 50rem;
+}
+
+@keyframes cambio {
+	0% {margin-left: 0;}
+	20% {margin-left: 0;}
+	
+	25% {margin-left: -100%;}
+	45% {margin-left: -100%;}
+	
+	50% {margin-left: -200%;}
+	70% {margin-left: -200%;}
+	
+	75% {margin-left: -300%;}
+	100% {margin-left: -300%;}
 }

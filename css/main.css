@@ -5,4 +5,19 @@ main{
 #index{
     display: grid;
     grid-template-rows: [hero-start]90vh[hero-end]100vh[banner-end]100vh[contact-end];
+    row-gap: 3rem;
+}
+.cerrar{
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    background-color: transparent !important;
+    border: none;
+    padding: 0 !important;
+    
+}
+.cerrar i{
+    cursor: pointer;
+    color: var(--primary);
+    font-size: 2.5rem !important;
 }

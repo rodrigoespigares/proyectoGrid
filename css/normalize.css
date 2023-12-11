@@ -29,12 +29,14 @@
     /* Color secundario */
     --secondary: rgb(104, 85, 224);
     --secondaryCeroSeis: rgba(104, 85, 224,0.6);
+    /* Color terciario */
+    --tertiary: #FFB649;
 }
 /* Declaro el body y sus caracteristicas*/
 body{
     display: grid;
     grid-template-columns: repeat(12, minmax(min-content, 1fr));
-    grid-template-rows: [header-start] minmax(10vh,max-content) [main-start] minmax(85vh,min-content) [footer-start] minmax(min-content,40vh) [footer-end];
+    grid-template-rows: [header-start] minmax(10vh,max-content) [main-start] minmax(85vh,min-content) [footer-start] min-content [footer-end];
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 }
