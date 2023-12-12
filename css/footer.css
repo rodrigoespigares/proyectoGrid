@@ -16,6 +16,10 @@
 #footer__info{
     font-size: 7.8rem;
     width: 100%;
+    margin-top: 3rem;
+}
+#footer__info h3{
+    text-align: center;
 }
 #footer__info .metodos__icon{
     width: 100%;
@@ -23,7 +27,16 @@
     justify-content: space-around;
 }
 #footer__info .metodos__icon i{
-    font-size: 3rem;
-    
-    
+    font-size: 5rem;
+}
+.visa{
+    color: blue;
+}
+.paypal{
+    color:#459ADB;
+}
+.mastercard{
+    background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,190,0,1) 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
