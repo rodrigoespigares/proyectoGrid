@@ -3,6 +3,7 @@
     --slider-time: 2s;
   }
 #hero{
+    grid-column: 1/-1;
     display: grid;
     grid-row: hero-start/hero-end;
 }
@@ -14,8 +15,6 @@
 .slider .slider__inner {
 	display: flex;
 	padding: 0;
-	width: 400%;
-	
 	animation: cambio 20s infinite alternate linear;
 }
 
@@ -69,7 +68,7 @@
     background-size: cover; 
 }
 .hero__info{
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8);
     width: max-content;
     margin-left: 10rem;
     padding: 3rem;

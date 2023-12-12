@@ -35,10 +35,11 @@
 /* Declaro el body y sus caracteristicas*/
 body{
     display: grid;
-    grid-template-columns: repeat(12, minmax(min-content, 1fr));
+    grid-template-columns: repeat(12, 1fr);
     grid-template-rows: [header-start] minmax(10vh,max-content) [main-start] minmax(85vh,min-content) [footer-start] min-content [footer-end];
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    row-gap: 3rem;
 }
 h1{
     font-family: 'Cinzel Decorative', serif;

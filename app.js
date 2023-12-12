@@ -4,10 +4,10 @@ window.onload = () => {
     createApp({
         data() {
             return {
-                showPrincipal:true,
+                showPrincipal:false,
                 showCatalogo:false,
                 showDetalle:false,
-                showRegister:false,
+                showRegister:true,
                 check:false,
                 productos:[],
                 idSeleccionado:1,
@@ -52,7 +52,7 @@ window.onload = () => {
                 this.showRegister = false
             },
             cargaProductos(){
-                fetch("prueba.json")
+                fetch("productos.json")
                     .then(response => {
                         if (!response.ok) {
                             throw new Error('Error en la petición AJAX');
@@ -114,6 +114,8 @@ window.onload = () => {
     }
     const signUpButton = document.getElementById('signUp');
     const signInButton = document.getElementById('signIn');
+    const signUpButton2 = document.getElementById('signUp2');
+    const signInButton2 = document.getElementById('signIn2');
     const container = document.getElementById('container');
 
     signUpButton.addEventListener('click', () => {
@@ -121,6 +123,16 @@ window.onload = () => {
     });
 
     signInButton.addEventListener('click', () => {
+        container.classList.remove("right-panel-active");
+    });
+
+    signUpButton2.addEventListener('click', () => {
+        console.log("hola");
+        container.classList.add("right-panel-active");
+    });
+
+    signInButton2.addEventListener('click', () => {
+        console.log("hola");
         container.classList.remove("right-panel-active");
     });
 }

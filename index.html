@@ -4,21 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi tienda</title>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <link rel="stylesheet" href="css/normalize.css"> <!-- Estilos básicos-->
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/registro.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/hero.css">
-    <link rel="stylesheet" href="css/banner.css">
-    <link rel="stylesheet" href="css/rrss.css">
-    <link rel="stylesheet" href="css/catalogo.css">
-    <link rel="stylesheet" href="css/detalle.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/e161f36ce9.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!--*-*-*-*-*-*-*-*-*-*-*-*-*-* ESTILOS *-*-*-*-*-*-*-*-*-*-*-*-*-*-->
+    <link rel="stylesheet" href="css/normalize.css"> <!-- Básicos -->
+    <link rel="stylesheet" href="css/mediaQuerys.css"> <!-- Media querys -->
+    <link rel="stylesheet" href="css/header.css">  <!-- Header -->
+    <link rel="stylesheet" href="css/nav.css"> <!-- Nav -->
+    <link rel="stylesheet" href="css/registro.css"> <!-- Registro y login -->
+    <link rel="stylesheet" href="css/main.css"> <!-- Main y cosas compartidas -->
+    <link rel="stylesheet" href="css/hero.css"> <!-- Hero -->
+    <link rel="stylesheet" href="css/banner.css"> <!-- Banner -->
+    <link rel="stylesheet" href="css/rrss.css"> <!-- Redes sociales y news letter -->
+    <link rel="stylesheet" href="css/catalogo.css"> <!-- Catálogo -->
+    <link rel="stylesheet" href="css/detalle.css"> <!-- Detalle del producto -->
+    <link rel="stylesheet" href="css/footer.css"> <!-- Footer -->
+    
+    <!--*-*-*-*-*-*-*-*-*-*-*-*-*-* CDN *-*-*-*-*-*-*-*-*-*-*-*-*-*-->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>  <!-- VUE JS -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css" rel="stylesheet"> <!-- Iconos remix icon -->
+    <script src="https://kit.fontawesome.com/e161f36ce9.js" crossorigin="anonymous"></script> <!-- Iconos fontawesome -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script> <!-- Iconos ed phosphor icon -->
+
+    <!--*-*-*-*-*-*-*-*-*-*-*-*-*-* SCRIPT PROPIA *-*-*-*-*-*-*-*-*-*-*-*-*-*-->
     <script src="app.js"></script>
 </head>
 <body id="app">
@@ -51,7 +57,7 @@
     <!--*-*-*-*-*-*-*-*-*-*-*-*-*-* MAIN *-*-*-*-*-*-*-*-*-*-*-*-*-*-->
     <main>
         <!--*-*-*-*-*-*-*-*-*-*-*-*-*-* PRINCIPAL *-*-*-*-*-*-*-*-*-*-*-*-*-*-->
-        <section v-show="showPrincipal" id="index">
+        <section v-if="showPrincipal" id="index">
             <!--*-*-*-*-*-*-*-*-*-*-*-*-*-* HERO *-*-*-*-*-*-*-*-*-*-*-*-*-*-->
             <section id="hero">
                 <div class="slider">
@@ -146,7 +152,7 @@
             </section>
         </section>
         <!--*-*-*-*-*-*-*-*-*-*-*-*-*-* CATALOGO *-*-*-*-*-*-*-*-*-*-*-*-*-*-->
-        <section v-show="showCatalogo" id="catalogo">
+        <section v-if="showCatalogo" id="catalogo">
             <!--*-*-*-*-*-*-*-*-*-*-*-*-*-* PRODUCTOS *-*-*-*-*-*-*-*-*-*-*-*-*-*-->
             <div v-for="producto in productos" class="catalogo__producto">
                 <div class="catalogo__producto__content">
@@ -158,7 +164,7 @@
             </div>
         </section>
         <!--*-*-*-*-*-*-*-*-*-*-*-*-*-* DETALLE *-*-*-*-*-*-*-*-*-*-*-*-*-*-->
-        <section v-show="showDetalle" id="detalle">
+        <section v-if="showDetalle" id="detalle">
             
             <section id="detalle__Galeria">
                 <div class="detalle__galeria__principal" >
@@ -188,16 +194,18 @@
             </section>
             <section id="detalle__Productos">
                 <h2>Más productos</h2>
-                <article v-for="producto in productos">
-                    <div class="detalle__producto__content">
-                        <img :src="producto.img" alt="">
-                    </div>
-                    <div class="detalle__producto__texto">
-                        <p>{{producto.name}}</p>
-                        <p>{{producto.price}}€</p>
-                    </div>
-                    <a @click="verDetalle(producto.id)" class="button__purple" href="#">Ver más</a>
-                </article>
+                <div class="detalle__productos__listado">
+                    <article v-for="producto in productos">
+                        <div class="detalle__producto__content">
+                            <img :src="producto.img" alt="">
+                        </div>
+                        <div class="detalle__producto__texto">
+                            <p>{{producto.name}}</p>
+                            <p>{{producto.price}}€</p>
+                        </div>
+                        <a @click="verDetalle(producto.id)" class="button__purple" href="#">Ver más</a>
+                    </article>
+                </div>
             </section>
         </section>
         <!--*-*-*-*-*-*-*-*-*-*-*-*-*-* REGISTRO Y LOGIN *-*-*-*-*-*-*-*-*-*-*-*-*-*-->
@@ -217,7 +225,12 @@
                         <input type="email" placeholder="Email" />
                         <input type="password" placeholder="Password" />
                         <button>Sign Up</button>
+                        
                     </form>
+                    <div class="sign-up-div">
+                        <span>¿Ya tienes una cuenta?</span>
+                        <button class="optional" id="signIn2">Inicia sesion</button>
+                    </div>
                 </div>
                 <div class="form-container sign-in-container">
                     <form action="#">
@@ -232,7 +245,12 @@
                         <input type="password" placeholder="Password" />
                         <a href="#">Forgot your password?</a>
                         <button>Sign In</button>
+                        
                     </form>
+                    <div class="sign-in-div">
+                        <span>¿Necesitas una cuenta?</span>
+                        <button class="optional" id="singUp2">Registrate</button>
+                    </div>
                 </div>
                 <div class="overlay-container">
                     <div class="overlay">

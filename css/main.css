@@ -4,7 +4,7 @@ main{
 }
 #index{
     display: grid;
-    grid-template-columns: 80vw;
+    grid-template-columns: minmax(80vw,min-content);
     grid-template-rows: [hero-start]90vh[hero-end]100vh[banner-end]100vh[contact-end];
     row-gap: 3rem;
 }

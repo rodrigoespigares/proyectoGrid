@@ -1,0 +1,61 @@
+/* Estilos específicos para pantallas más pequeñas (max-width: 1000px) */
+@media screen and (max-width: 992px) {
+    header{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #hero {
+        grid-row: auto; /* Modifica según tus necesidades específicas */
+        margin-left: 0; /* Puedes ajustar el margen según tus necesidades */
+    }
+    .hero__info {
+        margin-left: 0 !important;
+    }
+    .slider__item {
+        flex: 1 0 100%; /* Ajusta el crecimiento y el encogimiento del ítem según tus necesidades */
+    }
+    .item.active{
+        box-shadow: 0px 0px 0px !important;
+    }
+    #rrss{
+        flex-direction: column;
+        align-items: center;
+    }
+    .rrss__galery{
+        display: flex;
+        max-width: 100%;
+        height: 100%;
+    }
+    #detalle{
+        display: flex !important;
+        flex-direction: column;
+        grid-template-columns: repeat(3,1fr);
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        gap: 2rem;
+    }
+    .sign-in-container{
+        width: 100% !important;
+    }
+    .container.right-panel-active .sign-in-container{
+        transform: translateX(0%) !important;
+    }
+    #login__register .container.right-panel-active .sign-up-container{
+        transform: translateX(0%) !important;
+    }
+    .sign-up-container{
+        width: 100% !important;
+    }
+    .overlay-container{
+        display: none;
+    }
+    #footer{
+        grid-template-columns: repeat(3,minmax(16.66%,min-content)) !important;
+
+    }
+    #footer section{
+        grid-column: 2/3;
+        text-align: center;
+    }
+}
