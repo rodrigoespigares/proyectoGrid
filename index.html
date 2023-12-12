@@ -91,23 +91,23 @@
                         <p class="banner__header__contain--text">Tienda de moda y accesorios ONLINE</p>
                     </div>
                 </div>
+                <h2>Productos destacados</h2>
                 <section id="banner__slider">
                     <div class="items">
-
                         <div class="item active">
-                            <img src="productos[0].img">
+                            <a @click="verDetalle(productos[0].id)" href="#"><img v-if="productos[0]" :src="productos[0].img"></a>
                         </div>
                         <div class=" item next">
-                            <img src="productos[1].img">
+                            <a @click="verDetalle(productos[1].id)" href="#"><img v-if="productos[1]" :src="productos[1].img"></a>
                         </div>
                         <div class="item">
-                            <img src="productos[2].img">
+                            <a @click="verDetalle(productos[2].id)" href="#"><img v-if="productos[2]" :src="productos[2].img"></a>
                         </div>
                         <div class="item">
-                            <img src="productos[3].img">
+                            <a @click="verDetalle(productos[3].id)" href="#"><img v-if="productos[3]" :src="productos[3].img"></a>
                         </div>
                         <div class="item prev">
-                            <img src="productos[4].img">
+                            <a @click="verDetalle(productos[4].id)" href="#"><img v-if="productos[4]" :src="productos[4].img"></a>
                         </div>
                         <div class="button-container">
                             <div class="button"><i class="ri-arrow-left-circle-line"></i></div>
@@ -154,7 +154,7 @@
                 </div>
                 <h3 class="catalogo__producto__name">{{producto.name}}</h3>
                 <p class="catalogo__producto__price">{{producto.price}}€</p>
-                <a @click="verDetalle(producto.id)" class="button__purple" href="#">Ver más</a>
+                <a @click="verDetalle(producto.id)" class="button__purple" href="#">Ver detalles</a>
             </div>
         </section>
         <!--*-*-*-*-*-*-*-*-*-*-*-*-*-* DETALLE *-*-*-*-*-*-*-*-*-*-*-*-*-*-->
@@ -177,6 +177,7 @@
                 </div>
                 <p>Envios disponibles a todos las ciudades de la Península Ibérica</p>
                 <p>Con motivo de las compras navideñas, los pedidos realizados desde el 15 de noviembre podrán devolverse hasta el 10 de enero</p>
+                <p v-if="productos[idSeleccionado]">Precio: {{productos[idSeleccionado].price}}€</p>
                 <div class="detalle__texto__tallas">
                     <h3>Tallas:</h3>
                     <div class="detalle__texto__tallas__detalle">

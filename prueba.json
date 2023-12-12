@@ -6,7 +6,7 @@
         "name":"Jesey con brillantes",
         "price":22.40,
         "detalle":{
-            "tallas":["S","M","L"],
+            "tallas":["XS","S","M","L","XL"],
             "images":["img/productos/detalle_1_01.jpg","img/productos/detalle_1_02.jpg"],
             "description":"Un jersey para llamar la atención esta navidad"
         }
@@ -18,7 +18,7 @@
         "name":"Jersey Rojo",
         "price":21.20,
         "detalle":{
-            "tallas":["S","M","L"],
+            "tallas":["XS","S","M","L","XL"],
             "images":["img/productos/detalle_2_01.jpg","img/productos/detalle_2_02.jpg"],
             "description":"Jersey confeccionado con tejido 100% cashmere. Cuello redondo y manga larga. Acabados en rib."
         }
@@ -30,7 +30,7 @@
         "name":"Rebeca Veige",
         "price":16.00,
         "detalle":{
-            "tallas":["S","M","L"],
+            "tallas":["XS","S","M","L","XL"],
             "images":["img/productos/detalle_3_01.jpg","img/productos/detalle_3_02.jpg"],
             "description":"Rebeca de lana con tejido confeccionado. Con tres botones centrales."
         }
@@ -42,7 +42,7 @@
         "name":"Jersey de rayas",
         "price":18.10,
         "detalle":{
-            "tallas":["S","M","L"],
+            "tallas":["XS","S","M","L","XL"],
             "images":["img/productos/detalle_4_01.jpg","img/productos/detalle_4_02.jpg"],
             "description":"Jersey confeccionado con tejido 100% cashmere. Cuello redondo y manga larga. Acabados en rib."
         }
