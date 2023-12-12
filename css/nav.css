@@ -32,11 +32,14 @@
   left: 3vw;
   height: 5rem;
   width: 4rem;
+  padding: 2rem;
   cursor: pointer;
   justify-content: center;
   align-items: center;
   position: fixed;
   z-index: 4;
+  background-color: white;
+  border-radius: 100%;
 }
 
 /* Estilo para el botón del menú (hamburguesa) y sus efectos de animación */
@@ -82,7 +85,9 @@
   margin-top: 0px;
   transform: rotate(-405deg);
 }
-
+#menu-toggle:checked + .menu-button-container{
+  background-color: transparent;
+}
   
 #menu-toggle:checked ~ .menu{
   background-color: var(--primaryCeroOcho);
