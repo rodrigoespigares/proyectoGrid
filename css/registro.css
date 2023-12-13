@@ -7,7 +7,8 @@
 #login__register .darkGround{
     color: white;
 }
-#login__register button {
+#login__register .utils {
+	cursor: pointer;
 	border-radius: 20px;
 	border: 1px solid var(--secondary);
 	background-color: var(--secondary);
@@ -20,7 +21,7 @@
 	transition: transform 80ms ease-in;
 }
 
-#login__register button:active {
+#login__register .utils:active {
 	transform: scale(0.95);
 }
 
@@ -45,7 +46,7 @@
 	justify-content: center;
 	flex-direction: column;
 	padding: 0 50px;
-	height: 90%;
+	height: 100%;
 	text-align: center;
 }
 
@@ -195,6 +196,9 @@
 	height: 40px;
 	width: 40px;
 }
+.opciones__login{
+	display: none;
+}
 .optional{
 	background-color: transparent !important;
 	color: var(--secondary) !important;
@@ -203,6 +207,19 @@
 	margin-left: 1rem;
 	background-color: white !important;
 	cursor: pointer;
+}
+.cerrar{
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    background-color: transparent;
+    border: none;
+    padding: 1rem;
+}
+.cerrar i{
+    cursor: pointer;
+    color: var(--primary);
+    font-size: 3rem !important;
 }
 
 /* MEDIA QUERY PARA VISTAS MENORES QUE 992px */
@@ -222,4 +239,7 @@
     .overlay-container{
         display: none;
     }
+	.opciones__login{
+		display: inline;
+	}
 }

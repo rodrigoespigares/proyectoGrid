@@ -213,13 +213,13 @@
                         <input type="text" placeholder="Name" />
                         <input type="email" placeholder="Email" />
                         <input type="password" placeholder="Password" />
-                        <button>Sign Up</button>
-                        
+                        <button class="utils">Sign Up</button>
+                        <div class="opciones__login sign-up-div">
+                            <span>¿Ya tienes una cuenta?</span>
+                            <button class="optional utils" id="signIn2">Inicia sesion</button>
+                        </div>
                     </form>
-                    <div class="sign-up-div">
-                        <span>¿Ya tienes una cuenta?</span>
-                        <button class="optional" id="signIn2">Inicia sesion</button>
-                    </div>
+                    
                 </div>
                 <div class="form-container sign-in-container">
                     <form action="#">
@@ -233,25 +233,25 @@
                         <input type="email" placeholder="Email" />
                         <input type="password" placeholder="Password" />
                         <a href="#">Forgot your password?</a>
-                        <button>Sign In</button>
-                        
+                        <button class="utils utils">Sign In</button>
+                        <div class="opciones__login sign-in-div">
+                            <span>¿Necesitas una cuenta?</span>
+                            <button class="optional utils" id="signUp2">Registrate</button>
+                        </div>
                     </form>
-                    <div class="sign-in-div">
-                        <span>¿Necesitas una cuenta?</span>
-                        <button class="optional" id="signUp2">Registrate</button>
-                    </div>
+                    
                 </div>
                 <div class="overlay-container">
                     <div class="overlay">
                         <div class="overlay-panel overlay-left">
                             <h2 class="darkGround">Welcome Back!</h2>
                             <p class="darkGround">To keep connected with us please login with your personal info</p>
-                            <button class="ghost" id="signIn">Sign In</button>
+                            <button class="ghost utils" id="signIn">Sign In</button>
                         </div>
                         <div class="overlay-panel overlay-right">
                             <h2 class="darkGround">Hello, Friend!</h2>
                             <p class="darkGround">Enter your personal details and start journey with us</p>
-                            <button class="ghost" id="signUp">Sign Up</button>
+                            <button class="ghost utils" id="signUp">Sign Up</button>
                         </div>
                     </div>
                 </div>
