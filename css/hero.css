@@ -91,3 +91,14 @@
 	75% {margin-left: -300%;}
 	100% {margin-left: -300%;}
 }
+
+/* MEDIA QUERY PARA VISTAS MENORES QUE 992px */
+@media screen and (max-width: 992px) {
+    #hero {
+        grid-row: auto; /* Modifica según tus necesidades específicas */
+        margin-left: 0; /* Puedes ajustar el margen según tus necesidades */
+    }
+    .hero__info {
+        margin-left: 0 !important;
+    }
+}

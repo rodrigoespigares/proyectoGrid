@@ -81,3 +81,16 @@
     box-shadow: 0 0 2rem 1rem var(--secondaryCeroSeis);
     background-color: var(--secondary);
 }
+
+/* MEDIA QUERY PARA VISTAS MENORES QUE 992px */
+@media screen and (max-width: 992px) {
+    #rrss{
+        flex-direction: column;
+        align-items: center;
+    }
+    .rrss__galery{
+        display: flex;
+        max-width: 100%;
+        height: 100%;
+    }
+}

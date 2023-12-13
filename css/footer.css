@@ -3,22 +3,16 @@
     grid-column: 1/-1;
     border-top: .1rem solid var(--primary) ;
     display: grid;
-    grid-template-columns: repeat(6,minmax(16.66%,min-content));
+    grid-template-columns: repeat(auto-fit,minmax(35rem,1fr));
     font-size: 10rem;
     align-items: center;
-}
-#footer__help{
-    grid-column: 2/3;
+    justify-items: center;
+    padding: 3rem 0;
 }
 #footer h3{
     margin-bottom: 1rem;
 }
-#footer__info{
-    font-size: 7.8rem;
-    width: 100%;
-    margin-top: 3rem;
-}
-#footer__info h3{
+#footer section{
     text-align: center;
 }
 #footer__info .metodos__icon{
@@ -40,3 +34,15 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+/* MEDIA QUERY PARA VISTAS MENORES QUE 992px */
+/* @media screen and (max-width: 992px) {
+    #footer{
+        grid-template-columns: repeat(3,minmax(16.66%,min-content)) !important;
+        justify-self: center;
+    }
+    #footer section{
+        grid-column: 2/3;
+        text-align: center;
+    }
+} */

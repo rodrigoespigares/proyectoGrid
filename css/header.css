@@ -94,3 +94,12 @@ color: white;
 box-shadow: 0 0 2rem var(--secondaryCeroSeis);
 background-color: var(--secondary);
 }
+
+/* MEDIA QUERY PARA VISTAS MENORES QUE 992px */
+@media screen and (max-width: 992px) {
+    header{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
