@@ -7,11 +7,12 @@
 }
 #rrss{
     display: flex;
-    max-width: 50%;
+    max-width: 100%;
 }
 .rrss__galery{
     display: flex;
     padding: 3rem;
+    max-width: 70%;
 }
 .rrss__galery__photo{
    width: 100%;
@@ -27,14 +28,16 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
-.rrss__content p{
-    font-weight: 400;
+.rrss__content--title::first-letter{
+    font-family: 'Cinzel Decorative', serif;
 }
-.rrss__content p span{
-    font-size: 2rem;
-    font-weight: 600;
+.rrss__content--title{
+    font-weight: 200;
     color: var(--secondary);
+    text-transform: uppercase;
+    text-align: center;
 }
 .rrss__content__social{
     display: flex;
@@ -49,13 +52,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 2rem;
 }
 #personal form{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    font-size: 3rem;
+    font-size: 4rem;
     height: 30%;
+    gap: 2rem;
 }
 #personal .button__purple{
     color: white;
@@ -87,5 +92,8 @@
     #rrss{
         flex-direction: column;
         max-width: 100%;
+    }
+    .rrss__galery{
+        display: none;
     }
 }
