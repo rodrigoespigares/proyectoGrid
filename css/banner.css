@@ -120,6 +120,9 @@
 
 /* MEDIA QUERY PARA VISTAS MENORES QUE 992px */
 @media screen and (max-width: 992px) {
+    .banner__header__contain{
+        margin: 0;
+    }
     .slider__item {
         flex: 1 0 100%; /* Ajusta el crecimiento y el encogimiento del ítem según tus necesidades */
     }

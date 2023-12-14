@@ -1,6 +1,6 @@
 #catalogo{
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(35rem, 1fr));
+    grid-template-columns: repeat(auto-fit,minmax(45rem, 1fr));
     margin: 2rem 0;
     gap: 2rem;
 }
@@ -48,4 +48,11 @@
 .catalogo__producto .button__purple:hover{
     background-color: var(--secondary);
     color: white;
+}
+
+/* MEDIA QUERY PARA VISTAS MENORES QUE 992px */
+@media screen and (max-width: 992px) {
+    #catalogo{
+        grid-template-columns: repeat(auto-fit,minmax(20rem, 1fr));
+    }
 }
