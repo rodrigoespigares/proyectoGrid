@@ -54,6 +54,13 @@
     justify-content: center;
     gap: 2rem;
 }
+#personal label h2::first-letter{
+    font-family: 'Cinzel Decorative', serif;
+}
+#personal label h2{
+    text-align: center;
+    font-weight: 200;
+}
 #personal form{
     display: flex;
     flex-direction: column;
