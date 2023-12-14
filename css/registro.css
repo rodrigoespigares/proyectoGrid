@@ -59,6 +59,9 @@
     font-size: 1.2rem;
 }
 
+#login__register input:invalid{
+	background-color: var(--tertiary);
+}
 #login__register .container {
 	background-color: #fff;
 	border-radius: 10px;
